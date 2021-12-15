@@ -14,15 +14,16 @@
     <ul class="gallery js-response"></ul>
 
     <!-- Search form -->
-    <class class="search-form" id="search-form">
-        <label class="search">
-        <input
-          class="search-input"
-          type="text"
-          name="query"
-          autocomplete="off"
-          placeholder="Введіть запит..."
-        />
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    
         <button
           class="search-clear js-clear"
           type="button"
@@ -37,9 +38,7 @@
     <!-- Button "Load more" -->
     <button class="load-btn visually-hidden" type="button">
       <div class="arrow-7">
-    <span></span>
-    <span></span>
-    <span></span>
+   
       </div>
 </button>
 
