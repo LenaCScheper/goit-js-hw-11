@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@pnotify/core": "^5.2.0",
-    "notiflix": "^3.2.2"
+    "notiflix": "^3.2.2",
+    "simplelightbox": "^2.10.1"
   }
 }

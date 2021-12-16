@@ -1,7 +1,7 @@
 import './css/styles.css';
 import galleryTmplt from './templates/picture.hbs';
 import { Notify } from 'notiflix';
-import PicturesApiService from './js/pictures-Api.js';
+import PicturesApiService from './js/apiService.js';
 import simpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -14,7 +14,7 @@ const refs = {
 refs.inputForm.addEventListener('submit', onFormSubmit);
 refs.loadMoreBtn.addEventListener('click', onPicturesFetchAndMarkup);
 
-// -----по клику на сабмит читает значение поиска, запускае фун-ю поиска и встраивания галереи---
+
 function onFormSubmit(e) {
   e.preventDefault();
 
