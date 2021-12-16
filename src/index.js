@@ -1,7 +1,7 @@
 import './css/styles.css';
-import galleryTmplt from './templates/gallery-markup.hbs';
+import galleryTmplt from './templates/pictures.hbs';
 import { Notify } from 'notiflix';
-import PicturesApiService from './js/pictures-Api.js';
+import PicturesApiService from './js/apiService.js';
 import simpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -14,7 +14,7 @@ const refs = {
 refs.inputForm.addEventListener('submit', onFormSubmit);
 refs.loadMoreBtn.addEventListener('click', onPicturesFetchAndMarkup);
 
-// -----по клику на сабмит читает значение поиска, запускае фун-ю поиска и встраивания галереи---
+
 function onFormSubmit(e) {
   e.preventDefault();
 
@@ -34,14 +34,11 @@ function onFormSubmit(e) {
 const picturesApiService = new PicturesApiService();
 console.log('picturesApiService before build  ', picturesApiService);
 
-// -----------находит картинки и запускает фун-ю добавления галереи------------
 async function onPicturesFetchAndMarkup() {
   await picturesApiService.fetchPictures().then(appendPicturesMarkup);
   // .then(()=>if (page > 1) { smoothScroll});
 }
 
-// ------------------добавляет найденное в разметку галереи-----------
-//--------проверяет нашел/не нашел/конец страницы--------
 function appendPicturesMarkup(dataReceived) {
   if (dataReceived.totalHits === 0) {
     hideLoadMoreBtn();
@@ -78,14 +75,7 @@ function hideLoadMoreBtn() {
   refs.loadMoreBtn.classList.add('hidden');
 }
 
-// function OnInputCheck(dataReceived) {
-//   if (dataReceived.totalHits === 0) {
-//     clearContainer();
-//     return Notify.failure(
-//       'Sorry, there are no images matching your search query. Please try again',
-//     );
-//   }
-// }
+
 
 function onSearchFinishCheck(dataReceived) {
   if (
