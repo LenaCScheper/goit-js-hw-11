@@ -64,10 +64,13 @@ input:focus {
   margin-left: 5px;
   padding: 5px;
   border-radius: 4px;
-
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../images/search.svg');
+  width: 30px;
   height: 35.5px;
   transform: translateY(-1px);
-  font-weight: 600;
+ font-weight: 600;
   box-shadow: none;
   transition: box-shadow 200ms linear;
 }
@@ -80,10 +83,7 @@ input:focus {
   transition: box-shadow 200ms linear;
 }
 
-svg {
-  width: 20px;
-  height: 20px;
-}
+
 
 .load-more {
   margin-left: auto;
