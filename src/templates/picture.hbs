@@ -1,22 +1,21 @@
-<li class="photo-card">
-    <img src="{{webformatURL}}" data-url="{{largeImageURL}}" alt="" />
-
-    <div class="info">
-        <p class="info-item">
-            <i class="material-icons">thumb_up</i>
-            {{likes}}
-        </p>
-        <p class="info-item">
-            <i class="material-icons">visibility</i>
-            {{views}}
-        </p>
-        <p class="info-item">
-            <i class="material-icons">comment</i>
-            {{comments}}
-        </p>
-        <p class="info-item">
-            <i class="material-icons">cloud_download</i>
-            {{downloads}}
-        </p>
-    </div>
-</li>
+<{{#each this}}
+<div class="photo-card">
+    <a href="{{largeImageURL}}">
+    <img src="{{webformatURL}}" alt="{{tags}}" loading="lazy" />
+</a>
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+    </p>
+  </div>
+</div>
+{{/each}}
